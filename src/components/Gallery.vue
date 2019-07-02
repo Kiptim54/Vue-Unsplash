@@ -1,6 +1,6 @@
 <template>
     <div class="gallery">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 images-col">
                     <img v-for="image in images" v-bind:key="image.id" :src="image.urls.regular"  :alt="image.alt_description" class="unsplash-image">
@@ -41,9 +41,9 @@ export default {
     column-count: 3;
     -webkit-column-count: 3;
     -moz-column-count: 3;
-    -webkit-column-gap:2%;
-    -moz-column-gap: 2%;
-    column-gap: 2%;
+    -webkit-column-gap:auto;
+    -moz-column-gap: auto;
+    column-gap: auto;
     padding:2%;
 }
 .unsplash-image{
