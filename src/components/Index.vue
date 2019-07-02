@@ -1,6 +1,6 @@
 <template>
     <div class="index-page">
-       {{hi}}
+       <Gallery></Gallery>
 
 
     </div>
@@ -8,13 +8,14 @@
 
 
 <script>
+import Gallery from './Gallery';
 export default {
     name:'Index',
     props:[],
-    components:{},
+    components:{Gallery},
     data(){
         return{
-            hi:'Hi This a data instance returned'
+            
 
         }
     }
