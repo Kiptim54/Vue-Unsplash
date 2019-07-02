@@ -12,6 +12,7 @@
 
 <script>
 import axios from 'axios';
+process.env.VUE_APP_CLIENT_ID
 
 export default {
     name:'Gallery',
@@ -21,10 +22,11 @@ export default {
         }
     },
     mounted(){
+        console.log('client id', process.env.VUE_APP_CLIENT_ID)
         axios({
         method: 'get',
         url: 'https://api.unsplash.com/photos',
-        headers:{'Authorization':'Client-ID 68d3ace1d24a67372250a54167382da758efc87d4788ab96b6a06f7556ce56fd'},
+        headers:{'Authorization':`Client-ID ${process.env.VUE_APP_CLIENT_ID}`},
         }).then(response=>{
             console.log(response.data)
             this.images = response.data
