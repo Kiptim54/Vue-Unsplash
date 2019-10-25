@@ -19,14 +19,14 @@ export default {
     data(){
         return{
             images:[],
+            client_id:process.env.VUE_APP_CLIENT_ID
         }
     },
     mounted(){
-        console.log('client id', process.env.VUE_APP_CLIENT_ID)
         axios({
         method: 'get',
         url: 'https://api.unsplash.com/photos',
-        headers:{'Authorization':`Client-ID ${process.env.VUE_APP_CLIENT_ID}`},
+        headers:{'Authorization':`Client-ID ${this.client_id}`},
         }).then(response=>{
             console.log(response.data)
             this.images = response.data
@@ -40,9 +40,9 @@ export default {
 
 <style scoped>
 .images-col{
-    column-count: 3;
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
     -webkit-column-gap:auto;
     -moz-column-gap: auto;
     column-gap: auto;
